@@ -14,5 +14,6 @@ const populateUsers = () => {
 
 export const populate = () => {
   console.log("Populating database...");
-  populateUsers();
+//   populateUsers();
 };
+    
