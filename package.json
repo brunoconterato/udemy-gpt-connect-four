@@ -1,0 +1,19 @@
+{
+  "name": "udemy-gpt-connect-four",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:brunoconterato/udemy-gpt-connect-four.git",
+  "author": "Bruno Conterato <brunoconterato@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2"
+  },
+  "type": "module"
+}
