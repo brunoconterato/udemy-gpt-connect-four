@@ -1,10 +1,36 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt";
 
 const userSchema = new mongoose.Schema({
-  username: String,
-  password: String,
+  username: { type: String, required: true, unique: true },
+  password: { type: String, required: true }
 });
+
+userSchema.pre('save', async function () {
+  if (!this.isModified('password')) {
+    return;
+  }
+  const salt = await bcrypt.genSalt(10);
+  const hash = await bcrypt.hash(this.password, salt);
+  this.password = hash;
+
+  // Note: to chck if the new password is the same as the old one:
+  // const isMatch = await bcrypt.compare(password, user.password);
+});
+
 
 const User = mongoose.model("User", userSchema);
 
-export { User };
+
+
+const addUser = async ({username, password}) => {
+  const user = User({ username, password });
+  try {
+    await user.save();
+    return 'User saved';
+  } catch (error) {
+    throw error;
+  }
+}
+
+export { User, addUser };
