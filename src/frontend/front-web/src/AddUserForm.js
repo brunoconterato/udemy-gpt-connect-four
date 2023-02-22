@@ -16,7 +16,8 @@ const AddUserForm = () => {
     try {
       console.log(`Adding user: ${name} ${username} ${password}...`)
       await axios.post('/api/users', { name, username, password });
-      history.push('/users');
+      // Navigate to route: '/welcome/:username'
+      history(`/welcome/${username}`);
     } catch (error) {
       console.error(error);
     }
