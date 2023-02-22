@@ -22,7 +22,6 @@ app.get("/api/users", (req, res) => {
 });
 
 app.post("/api/users", async (req, res) => {
-  console.log("Adding user: ", req.body);
   try {
     const message = await addUser(req.body);
     res.send({ message });
