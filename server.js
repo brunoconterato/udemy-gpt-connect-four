@@ -1,4 +1,4 @@
-import db from "./src/backend/db.js";
+import db from "./src/backend/config/database.js";
 import express from "express";
 
 import { populate } from "./src/backend/populate.js";
