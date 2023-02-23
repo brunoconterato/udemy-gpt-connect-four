@@ -163,3 +163,81 @@
   margin-top: 2rem;
   cursor: pointer;
 }
+
+/* Default theme */
+.board {
+  background-color: #fdfdfd;
+}
+
+.cell {
+  background-color: #fff;
+  border: 2px solid black;
+}
+
+.cell.red {
+  background-color: #ff4136;
+}
+
+.cell.yellow {
+  background-color: #ffdc00;
+}
+
+/* Ice theme */
+.board.ice {
+  background-image: url("../../../assets/images/ice-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cell.ice {
+  background-color: #fff;
+}
+
+/* Fire theme */
+.board.fire {
+  background-image: url("../../../assets/images/fire-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cell.fire {
+  background-color: #fff;
+}
+
+/* Snow theme */
+.board.snow {
+  background-image: url("../../../assets/images/snow-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cell.snow {
+  background-color: #ecf0f1;
+}
+
+/* Sky theme */
+.board.sky {
+  background-image: url("../../../assets/images/sky-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cell.sky {
+  background-color: #fff;
+}
+
+/* Ocean theme */
+.board.ocean {
+  background-image: url("../../../assets/images/ocean-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cell.ocean {
+  background-color: #fff;
+}

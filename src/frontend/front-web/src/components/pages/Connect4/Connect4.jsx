@@ -11,13 +11,17 @@ const Connect4 = () => {
   const [player, setPlayer] = useState("red");
   const [winner, setWinner] = useState(null);
 
+  const [theme, setTheme] = useState("default");
+
+  const toggleTheme = (newTheme) => {
+    setTheme(newTheme);
+  };
+
   const restartGame = () => {
-    setBoard(
-      Array.from({ length: ROWS }, () => new Array(COLS).fill(null))
-    );
+    setBoard(Array.from({ length: ROWS }, () => new Array(COLS).fill(null)));
     setPlayer("red");
     setWinner(null);
-  }
+  };
 
   const dropCoin = (col) => {
     // Find the first empty slot in the column
@@ -134,11 +138,11 @@ const Connect4 = () => {
 
   const renderBoard = () => {
     const rows = Array.from({ length: ROWS }, (_, row) => renderRow(row));
-    return <div className="board">{rows}</div>;
+    return <div className={`board ${theme}`}>{rows}</div>;
   };
 
   return (
-    <div className="connect4">
+    <div className={`connect4 ${theme}`}>
       <h1>Connect 4</h1>
       <div className="status">
         {player === "red" ? "Red's turn" : "Yellow's turn"}
@@ -154,6 +158,18 @@ const Connect4 = () => {
           </button>
         </div>
       )}
+      <div className="themes">
+        <button onClick={() => toggleTheme("default")}>Default</button>
+        <button onClick={() => toggleTheme("ice")}>Ice</button>
+        <button onClick={() => toggleTheme("fire")}>Fire</button>
+        <button onClick={() => toggleTheme("snow")}>Snow</button>
+        <button onClick={() => toggleTheme("sky")}>Sky</button>
+        <button onClick={() => toggleTheme("ocean")}>Ocean</button>
+        {/* <button onClick={() => toggleTheme("forest")}>Forest</button>
+        <button onClick={() => toggleTheme("desert")}>Desert</button>
+        <button onClick={() => toggleTheme("galaxy")}>Galaxy</button>
+        <button onClick={() => toggleTheme("space")}>Space</button> */}
+      </div>
     </div>
   );
 };
